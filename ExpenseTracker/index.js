@@ -7,9 +7,8 @@ function addNewExpense(e){
         category: e.target.category.value
     }
     console.log(expenseDetails);
-    const token = localStorage.getItem('token');
-
-    axios.post('http://localhost:3000/expense/addexpense',expenseDetails,{headers:{'Authorization':token}})
+    
+    axios.post('http://localhost:3000/expense/addexpense',expenseDetails,)
     .then((response)=>{
 
         addNewExpensetoUI(response.data.expense);
